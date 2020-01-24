@@ -24,4 +24,8 @@ public class indexController {
         }
         return "index"; // 가져온 결과를 posts로 index에 전달한다.
     }
+
+    public String login() {
+        return "login";
+    }
 }
