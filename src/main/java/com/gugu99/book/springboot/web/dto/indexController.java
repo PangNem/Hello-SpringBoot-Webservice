@@ -12,20 +12,16 @@ import javax.servlet.http.HttpSession;
 @RequiredArgsConstructor
 @Controller
 public class indexController {
-    private final PostsService postsService;
-    private final HttpSession httpSession;
-
-    @GetMapping("/")
-    public String index(Model model) {
-        model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
-        if (user != null) {
-            model.addAttribute("userName", user.getName());
-        }
-        return "index"; // 가져온 결과를 posts로 index에 전달한다.
-    }
-
-    public String login() {
-        return "login";
-    }
+//    private final PostsService postsService;
+//    private final HttpSession httpSession;
+//
+//    @GetMapping("/")
+//    public String index(Model model) {
+//        model.addAttribute("posts", postsService.findAllDesc());
+//        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+//        if (user != null) {
+//            model.addAttribute("userName", user.getName());
+//        }
+//        return "index"; // 가져온 결과를 posts로 index에 전달한다.
+//    }
 }
