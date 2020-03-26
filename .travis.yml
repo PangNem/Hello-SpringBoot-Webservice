@@ -24,7 +24,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY # Travis Repository Settings
     secret_access_key: $AWS_SECRET_KEY  # Travis Repository Settings
 
-    bucket: hello-springboot-build # S3 버
+    bucket: hello-springboot-build # S3 버킷
     region: ap-northeast-2
     skip_cleanup: true
     acl: private # Zip파일 접근 권한 Private
@@ -35,7 +35,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY # Travis Repository Settings
     secret_access_key: $AWS_SECRET_KEY  # Travis Repository Settings
 
-    bucket: hello-springboot-build # S3 버
+    bucket: hello-springboot-build # S3 버킷
     key: hello-springboot-webservice.zip # 빌드 파일을 압축해서 전달
 
     bundle_type: zip # 압축 확장자
