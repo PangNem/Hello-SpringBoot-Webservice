@@ -10,7 +10,7 @@ branches:
 cache:
   directories:
     - '$HOME/.m2/repository'
-    - '$Home/.gradle'
+    - '$HOME/.gradle'
 
 script: "./gradlew clean build"
 
@@ -27,7 +27,6 @@ deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY # Travis Repository Settings
     secret_access_key: $AWS_SECRET_KEY  # Travis Repository Settings
-
     bucket: hello-springboot-build # S3 버킷
     region: ap-northeast-2
     skip_cleanup: true
@@ -38,14 +37,11 @@ deploy:
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY # Travis Repository Settings
     secret_access_key: $AWS_SECRET_KEY  # Travis Repository Settings
-
     bucket: hello-springboot-build # S3 버킷
     key: hello-springboot-webservice.zip # 빌드 파일을 압축해서 전달
-
     bundle_type: zip # 압축 확장자
     application: hello-springboot-webservice # CodeDeploy 애플리케이션
     deployment_group: hello-springboot-webservice-group # CodeDeploy 배포 그룹
-
     region: ap-northeast-2
     wait-until-deployed: true
 
